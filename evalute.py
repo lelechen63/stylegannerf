@@ -2,7 +2,7 @@ import os
 import cv2
 path = '/home/uss00022/lelechen/github/stylegan2-ada-pytorch-lele/out'
 import PIL.Image
-
+import numpy as np
 # Load mask
 mask = PIL.Image.open("/home/uss00022/lelechen/github/lighting/predef/facial_mask_v10.png")
 # mask = PIL.Image.open("/home/uss00022/lelechen/github/lighting/predef/facial_mask_v10.png")
