@@ -8,7 +8,7 @@ mask = PIL.Image.open("/home/uss00022/lelechen/github/lighting/predef/facial_mas
 # mask = PIL.Image.open("/home/uss00022/lelechen/github/lighting/predef/facial_mask_v10.png")
 
 mask = np.array(mask)[500:2500, 1019 : 3019]/ 255.0
-mask = cv2.resize(mask, (G.img_resolution,G.img_resolution))
+mask = cv2.resize(mask, (256,256))
 mask = np.expand_dims(mask, axis=2)
 
 proj_imgs = []
