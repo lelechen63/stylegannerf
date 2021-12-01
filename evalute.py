@@ -43,4 +43,4 @@ for i in proj_imgs:
     gg.append(psnr(target_uint8, synth_image))
     print (gg[-1])
 
-print (mean(gg)/len(gg))
+print (sum(gg)/len(gg))
