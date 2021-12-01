@@ -25,6 +25,7 @@ for i in proj_imgs:
     image = np.array(target_pil)[500:2500, 1019 : 3019]
     image = cv2.resize(image, (256,256) ) * mask
     target_uint8 = image.astype(np.uint8)
+    target_uint8 = cv2.cvtColor(target_uint8, cv2.COLOR_RGB2BGR)
 
     tmp =np.concatenate([target_uint8, synth_image], axis=1)
     cv2.imwrite('./tmp.png', tmp)
