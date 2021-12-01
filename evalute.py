@@ -4,7 +4,7 @@ path = '/home/uss00022/lelechen/github/stylegan2-ada-pytorch-lele/out'
 import PIL.Image
 
 # Load mask
-mask = PIL.Image.open("/data/home/uss00022/lelechen/github/lighting/predef/facial_mask_v10.png")
+mask = PIL.Image.open("/home/uss00022/lelechen/github/lighting/predef/facial_mask_v10.png")
 # mask = PIL.Image.open("/home/uss00022/lelechen/github/lighting/predef/facial_mask_v10.png")
 
 mask = np.array(mask)[500:2500, 1019 : 3019]/ 255.0
