@@ -41,5 +41,6 @@ for i in proj_imgs:
 
     tmp =np.concatenate([target_uint8, synth_image], axis=1)
     gg.append(psnr(target_uint8, synth_image))
+    print (gg[-1])
 
 print (mean(gg)/len(gg))
