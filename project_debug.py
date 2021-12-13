@@ -179,8 +179,10 @@ def run_projection(
     # Save final projected frame and W vector.
     target_pil.save(f'./target.png')
     print ( '!!!!!' ,target_fname)
-    # projected_w = 
-    synth_image = G.synthesis(projected_w.unsqueeze(0), noise_mode='const')
+
+    projected_w = np.load('/nfs/STG/CodecAvatar/lelechen/Facescape/textured_meshes/1/models_reg/1_neutral.npz')['w']
+    # synth_image = G.synthesis(projected_w.unsqueeze(0), noise_mode='const')
+    synth_image = G.synthesis(projected_w, noise_mode='const')
     synth_image = (synth_image + 1) * (255/2)
     synth_image = synth_image.permute(0, 2, 3, 1).clamp(0, 255).to(torch.uint8)[0].cpu().numpy()
     tmp = np.concatenate([target_uint8, synth_image], axis=1)
