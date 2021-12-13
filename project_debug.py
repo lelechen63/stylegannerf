@@ -165,7 +165,7 @@ def run_projection(
         G = legacy.load_network_pkl(fp)['G_ema'].requires_grad_(False).to(device) # type: ignore
 
     # Load mask
-    mask = PIL.Image.open("/data/home/uss00022/lelechen/github/lighting/predef/facial_mask_v10.png")
+    mask = PIL.Image.open("/home/uss00022/lelechen/github/lighting/predef/facial_mask_v10.png")
     mask = np.array(mask)[500:2500, 1019 : 3019]/ 255.0
     mask = cv2.resize(mask, (G.img_resolution,G.img_resolution))
     mask = np.expand_dims(mask, axis=2)
