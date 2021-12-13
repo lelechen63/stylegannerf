@@ -181,6 +181,7 @@ def run_projection(
     print ( '!!!!!' ,target_fname)
 
     projected_w = np.load('/nfs/STG/CodecAvatar/lelechen/Facescape/textured_meshes/1/models_reg/1_neutral.npz')['w']
+    projected_w = torch.Tensor(projected_w).cuda()
     # synth_image = G.synthesis(projected_w.unsqueeze(0), noise_mode='const')
     synth_image = G.synthesis(projected_w, noise_mode='const')
     synth_image = (synth_image + 1) * (255/2)
