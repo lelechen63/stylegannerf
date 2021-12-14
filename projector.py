@@ -133,12 +133,12 @@ def project(
 #----------------------------------------------------------------------------
 
 @click.command()
-@click.option('--network', 'network_pkl', help='Network pickle filename', required=True)
+@click.option('--network', 'network_pkl', help='Network pickle filename', default = '/home/uss00022/lelechen/github/stylegannerf/checkpoints/00012-target-face256/network-snapshot-002400.pkl')
 @click.option('--target', 'target_fname', help='Target image file to project to', required=True, metavar='FILE')
 @click.option('--num-steps',              help='Number of optimization steps', type=int, default=1000, show_default=True)
 @click.option('--seed',                   help='Random seed', type=int, default=303, show_default=True)
 @click.option('--save-video',             help='Save an mp4 video of optimization progress', type=bool, default=True, show_default=True)
-@click.option('--outdir',                 help='Where to save the output images', required=True, metavar='DIR')
+@click.option('--outdir',                 help='Where to save the output images', default='./out', metavar='DIR')
 def run_projection(
     network_pkl: str,
     target_fname: str,
