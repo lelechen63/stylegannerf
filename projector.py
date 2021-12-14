@@ -173,8 +173,10 @@ def run_projection(
     # Load target image.
     target_pil = PIL.Image.open(target_fname)
     image = np.array(target_pil)[500:2500, 1019 : 3019]
-    image = cv2.resize(image, (G.img_resolution,G.img_resolution) ) * mask
+    image = cv2.resize(image, ( G.img_resolution, G.img_resolution) ) * mask
     target_uint8 = image.astype(np.uint8)
+
+    print (max( target_uint8), min(target_uint8), '++++++++++++++++')
 
     # Optimize projection.
     start_time = perf_counter()
