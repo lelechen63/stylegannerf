@@ -176,7 +176,7 @@ def run_projection(
     image = cv2.resize(image, ( G.img_resolution, G.img_resolution) ) * mask
     target_uint8 = image.astype(np.uint8)
 
-    print (max( target_uint8), min(target_uint8), '++++++++++++++++')
+    print (np.amin( target_uint8), np.amax(target_uint8), '++++++++++++++++')
 
     # Optimize projection.
     start_time = perf_counter()
