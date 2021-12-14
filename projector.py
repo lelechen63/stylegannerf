@@ -66,7 +66,7 @@ def project(
     if target_images.shape[2] > 256:
         target_images = F.interpolate(target_images, size=(256, 256), mode='area')
     
-    print ( np.amax(target_images), np.amin(target_images),'!!!!!!!!!!')
+    print ( target_images.max(), target_images.min(),'!!!!!!!!!!')
     target_features = vgg16(target_images, resize_images=False, return_lpips=True)
 
     w_opt = torch.tensor(w_avg, dtype=torch.float32, device=device, requires_grad=True) # pylint: disable=not-callable
